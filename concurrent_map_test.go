@@ -9,6 +9,12 @@ func TestConcurrentMap(t *testing.T) {
 	concurrentMap := NewConcurrentMap()
 	concurrentMap.Set("name", "Raed Shomali")
 
+	ok := concurrentMap.Contains("name")
+	assert.True(t, ok)
+
+	size := concurrentMap.Size()
+	assert.Equal(t, size, 1)
+
 	value, ok := concurrentMap.Get("name")
 	assert.True(t, ok)
 	assert.Equal(t, value, "Raed Shomali")
@@ -21,4 +27,14 @@ func TestConcurrentMap(t *testing.T) {
 	value, ok = concurrentMap.Get("name")
 	assert.False(t, ok)
 	assert.Nil(t, value)
+
+	concurrentMap.Set("name", "Raed Shomali")
+	concurrentMap.Clear()
+
+	value, ok = concurrentMap.Get("name")
+	assert.False(t, ok)
+	assert.Nil(t, value)
+
+	size = concurrentMap.Size()
+	assert.Equal(t, size, 0)
 }
