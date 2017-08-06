@@ -31,9 +31,7 @@ func NewShardedConcurrentMap(options ...ShardedConcurrentMapOption) *ShardedConc
 	}
 
 	internalMap := make([]*ConcurrentMap, shardedConcurrentMap.numberOfShards)
-
-	var i uint32
-	for i = 0; i < shardedConcurrentMap.numberOfShards; i++ {
+	for i := uint32(0); i < shardedConcurrentMap.numberOfShards; i++ {
 		internalMap[i] = NewConcurrentMap()
 	}
 
