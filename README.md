@@ -1,6 +1,6 @@
 # cmap [![Go Report Card](https://goreportcard.com/badge/github.com/shomali11/cmap)](https://goreportcard.com/report/github.com/shomali11/cmap) [![GoDoc](https://godoc.org/github.com/shomali11/cmap?status.svg)](https://godoc.org/github.com/shomali11/cmap) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A concurrent Map that supports concurrent reads and writes.
+A Map that supports concurrent reads and writes.
 
 ## Features
 
