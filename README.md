@@ -1,14 +1,15 @@
 # maps [![Go Report Card](https://goreportcard.com/badge/github.com/shomali11/maps)](https://goreportcard.com/report/github.com/shomali11/maps) [![GoDoc](https://godoc.org/github.com/shomali11/maps?status.svg)](https://godoc.org/github.com/shomali11/maps) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A Map that supports concurrent reads and writes.
+A collection of maps that supports concurrent reads and writes.
 
 ## Features
 
 * Thread safe
-* Two Concurrent Map types:
+* Available types:
     * Simple Concurrent Map
     * Sharded Concurrent Map
-        * Provides improved performance by reducing the number of write locks
+
+_Note: Sharded versions provides improved performance by reducing the number of write locks_
 
 ## Usage
 
