@@ -1,4 +1,4 @@
-# cmap [![Go Report Card](https://goreportcard.com/badge/github.com/shomali11/cmap)](https://goreportcard.com/report/github.com/shomali11/cmap) [![GoDoc](https://godoc.org/github.com/shomali11/cmap?status.svg)](https://godoc.org/github.com/shomali11/cmap) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# maps [![Go Report Card](https://goreportcard.com/badge/github.com/shomali11/maps)](https://goreportcard.com/report/github.com/shomali11/maps) [![GoDoc](https://godoc.org/github.com/shomali11/maps?status.svg)](https://godoc.org/github.com/shomali11/maps) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Map that supports concurrent reads and writes.
 
@@ -15,7 +15,7 @@ A Map that supports concurrent reads and writes.
 Using `govendor` [github.com/kardianos/govendor](https://github.com/kardianos/govendor):
 
 ```
-govendor fetch github.com/shomali11/cmap
+govendor fetch github.com/shomali11/maps
 ```
 
 ## Dependencies
@@ -33,11 +33,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/shomali11/cmap"
+	"github.com/shomali11/maps"
 )
 
 func main() {
-	concurrentMap := cmap.NewConcurrentMap()
+	concurrentMap := maps.NewConcurrentMap()
 	concurrentMap.Set("name", "Raed Shomali")
 
 	fmt.Println(concurrentMap.Contains("name")) // true
@@ -68,11 +68,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/shomali11/cmap"
+	"github.com/shomali11/maps"
 )
 
 func main() {
-	concurrentMap := cmap.NewShardedConcurrentMap()
+	concurrentMap := maps.NewShardedConcurrentMap()
 	concurrentMap.Set("name", "Raed Shomali")
 
 	fmt.Println(concurrentMap.Contains("name")) // true
@@ -103,11 +103,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/shomali11/cmap"
+	"github.com/shomali11/maps"
 )
 
 func main() {
-	concurrentMap := cmap.NewShardedConcurrentMap(cmap.WithNumberOfShards(100))
+	concurrentMap := maps.NewShardedConcurrentMap(maps.WithNumberOfShards(100))
 	concurrentMap.Set("name", "Raed Shomali")
 
 	fmt.Println(concurrentMap.Contains("name")) // true

@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/shomali11/cmap"
+	"github.com/shomali11/maps"
 )
 
 func main() {
-	concurrentMap := cmap.NewConcurrentMap()
+	concurrentMap := maps.NewConcurrentMap()
 	concurrentMap.Set("name", "Raed Shomali")
 
 	fmt.Println(concurrentMap.Contains("name"))

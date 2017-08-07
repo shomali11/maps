@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/shomali11/cmap"
+	"github.com/shomali11/maps"
 )
 
 func main() {
-	concurrentMap := cmap.NewShardedConcurrentMap(cmap.WithNumberOfShards(100))
+	concurrentMap := maps.NewShardedConcurrentMap(maps.WithNumberOfShards(100))
 	concurrentMap.Set("name", "Raed Shomali")
 
 	fmt.Println(concurrentMap.Contains("name"))

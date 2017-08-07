@@ -1,4 +1,4 @@
-package cmap
+package maps
 
 import "sync"
 
