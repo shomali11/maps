@@ -16,6 +16,12 @@ func TestShardedConcurrentMultiMap(t *testing.T) {
 	size := concurrentMap.Size()
 	assert.Equal(t, size, 1)
 
+	isEmpty := concurrentMap.IsEmpty()
+	assert.False(t, isEmpty)
+
+	keys := concurrentMap.Keys()
+	assert.Equal(t, keys, []string{"names"})
+
 	value, ok := concurrentMap.Get("names")
 	assert.True(t, ok)
 	assert.Equal(t, value, []interface{}{"Raed Shomali", "Dwayne Johnson"})
@@ -38,6 +44,12 @@ func TestShardedConcurrentMultiMap(t *testing.T) {
 
 	size = concurrentMap.Size()
 	assert.Equal(t, size, 0)
+
+	isEmpty = concurrentMap.IsEmpty()
+	assert.True(t, isEmpty)
+
+	keys = concurrentMap.Keys()
+	assert.Equal(t, keys, []string{})
 }
 
 func TestShardedConcurrentMultiMap_InvalidShards(t *testing.T) {

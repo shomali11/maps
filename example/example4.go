@@ -13,12 +13,16 @@ func main() {
 	fmt.Println(concurrentMap.Contains("names"))
 	fmt.Println(concurrentMap.Get("names"))
 	fmt.Println(concurrentMap.Size())
+	fmt.Println(concurrentMap.IsEmpty())
+	fmt.Println(concurrentMap.Keys())
 
 	concurrentMap.Remove("names")
 
 	fmt.Println(concurrentMap.Contains("names"))
 	fmt.Println(concurrentMap.Get("names"))
 	fmt.Println(concurrentMap.Size())
+	fmt.Println(concurrentMap.IsEmpty())
+	fmt.Println(concurrentMap.Keys())
 
 	concurrentMap.Append("names", "Raed Shomali")
 	concurrentMap.Clear()
@@ -26,4 +30,6 @@ func main() {
 	fmt.Println(concurrentMap.Contains("names"))
 	fmt.Println(concurrentMap.Get("names"))
 	fmt.Println(concurrentMap.Size())
+	fmt.Println(concurrentMap.IsEmpty())
+	fmt.Println(concurrentMap.Keys())
 }
