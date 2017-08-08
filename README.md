@@ -7,7 +7,9 @@ A collection of maps that supports concurrent reads and writes.
 * Thread safe
 * Available types:
     * Simple Concurrent Map
+    * Simple Concurrent Multi Map
     * Sharded Concurrent Map
+    * Sharded Concurrent Multi Map
 
 _Note: Sharded versions provides improved performance by reducing the number of write locks_
 
