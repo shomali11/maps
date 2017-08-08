@@ -29,7 +29,7 @@ govendor fetch github.com/shomali11/maps
 
 ## Example 1
 
-Using `NewConcurrentMap` to create concurrent map
+Using `NewConcurrentMap` to create a concurrent map
 
 ```go
 package main
@@ -129,5 +129,113 @@ func main() {
 	fmt.Println(concurrentMap.Contains("name")) // false
 	fmt.Println(concurrentMap.Get("name"))      // <nil> false
 	fmt.Println(concurrentMap.Size())           // 0
+}
+```
+
+## Example 4
+
+Using `NewConcurrentMultiMap` to create a concurrent multi map
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/shomali11/maps"
+)
+
+func main() {
+	concurrentMap := maps.NewConcurrentMultiMap()
+	concurrentMap.Set("names", []interface{}{"Raed Shomali"})
+	concurrentMap.Append("names", "Dwayne Johnson")
+
+	fmt.Println(concurrentMap.Contains("names")) // true
+	fmt.Println(concurrentMap.Get("names"))      // ["Raed Shomali" "Dwayne Johnson"] true
+	fmt.Println(concurrentMap.Size())            // 1
+
+	concurrentMap.Remove("names")
+
+	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.Get("names"))      // [] false
+	fmt.Println(concurrentMap.Size())            // 0
+
+	concurrentMap.Append("names", "Raed Shomali")
+	concurrentMap.Clear()
+
+	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.Get("names"))      // [] false
+	fmt.Println(concurrentMap.Size())            // 0
+}
+```
+
+## Example 5
+
+Using `NewShardedConcurrentMultiMap` to create a sharded concurrent multi map. _Default shards are 16_
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/shomali11/maps"
+)
+
+func main() {
+	concurrentMap := maps.NewShardedConcurrentMultiMap()
+	concurrentMap.Set("names", []interface{}{"Raed Shomali"})
+	concurrentMap.Append("names", "Dwayne Johnson")
+
+	fmt.Println(concurrentMap.Contains("names")) // true
+	fmt.Println(concurrentMap.Get("names"))      // ["Raed Shomali" "Dwayne Johnson"] true
+	fmt.Println(concurrentMap.Size())            // 1
+
+	concurrentMap.Remove("names")
+
+	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.Get("names"))      // [] false
+	fmt.Println(concurrentMap.Size())            // 0
+
+	concurrentMap.Append("names", "Raed Shomali")
+	concurrentMap.Clear()
+
+	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.Get("names"))      // [] false
+	fmt.Println(concurrentMap.Size())            // 0
+}
+```
+
+## Example 6
+
+Using `WithNumberOfShards` to override default number of shards
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/shomali11/maps"
+)
+
+func main() {
+	concurrentMap := maps.NewShardedConcurrentMultiMap(maps.WithNumberOfShards(100))
+	concurrentMap.Set("names", []interface{}{"Raed Shomali"})
+	concurrentMap.Append("names", "Dwayne Johnson")
+
+	fmt.Println(concurrentMap.Contains("names")) // true
+	fmt.Println(concurrentMap.Get("names"))      // ["Raed Shomali" "Dwayne Johnson"] true
+	fmt.Println(concurrentMap.Size())            // 1
+
+	concurrentMap.Remove("names")
+
+	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.Get("names"))      // [] false
+	fmt.Println(concurrentMap.Size())            // 0
+
+	concurrentMap.Append("names", "Raed Shomali")
+	concurrentMap.Clear()
+
+	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.Get("names"))      // [] false
+	fmt.Println(concurrentMap.Size())            // 0
 }
 ```
