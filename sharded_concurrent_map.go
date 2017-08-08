@@ -4,34 +4,14 @@ import (
 	"github.com/shomali11/util/hashes"
 )
 
-const (
-	defaultShards = 16
-)
-
-type ShardedConcurrentMapOption func(*ShardedConcurrentMap)
-
-func WithNumberOfShards(numberOfShards uint32) ShardedConcurrentMapOption {
-	return func(shardedConcurrentMap *ShardedConcurrentMap) {
-		if numberOfShards < 1 {
-			shardedConcurrentMap.numberOfShards = defaultShards
-		} else {
-			shardedConcurrentMap.numberOfShards = numberOfShards
-		}
-	}
-}
-
 // NewShardedConcurrentMap creates a new sharded concurrent map
-func NewShardedConcurrentMap(options ...ShardedConcurrentMapOption) *ShardedConcurrentMap {
+func NewShardedConcurrentMap(options ...ShardOption) *ShardedConcurrentMap {
 	shardedConcurrentMap := &ShardedConcurrentMap{
-		numberOfShards: defaultShards,
+		shards: getNumberOfShards(options...),
 	}
 
-	for _, option := range options {
-		option(shardedConcurrentMap)
-	}
-
-	concurrentMaps := make([]*ConcurrentMap, shardedConcurrentMap.numberOfShards)
-	for i := uint32(0); i < shardedConcurrentMap.numberOfShards; i++ {
+	concurrentMaps := make([]*ConcurrentMap, shardedConcurrentMap.shards)
+	for i := uint32(0); i < shardedConcurrentMap.shards; i++ {
 		concurrentMaps[i] = NewConcurrentMap()
 	}
 
@@ -41,7 +21,7 @@ func NewShardedConcurrentMap(options ...ShardedConcurrentMapOption) *ShardedConc
 
 // ShardedConcurrentMap concurrent map
 type ShardedConcurrentMap struct {
-	numberOfShards uint32
+	shards         uint32
 	concurrentMaps []*ConcurrentMap
 }
 
@@ -89,5 +69,5 @@ func (c *ShardedConcurrentMap) Clear() {
 }
 
 func (c *ShardedConcurrentMap) getShard(key string) uint32 {
-	return hashes.FNV32(key) % uint32(c.numberOfShards)
+	return hashes.FNV32(key) % uint32(c.shards)
 }

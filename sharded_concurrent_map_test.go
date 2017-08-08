@@ -41,5 +41,5 @@ func TestShardedConcurrentMap(t *testing.T) {
 
 func TestShardedConcurrentMap_InvalidShards(t *testing.T) {
 	concurrentMap := NewShardedConcurrentMap(WithNumberOfShards(0))
-	assert.Equal(t, concurrentMap.numberOfShards, uint32(16))
+	assert.Equal(t, concurrentMap.shards, uint32(16))
 }
