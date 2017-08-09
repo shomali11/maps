@@ -38,8 +38,8 @@ func (c *MultiMap) Remove(key string) {
 	delete(c.internalMap, key)
 }
 
-// Contains contains in map
-func (c *MultiMap) Contains(key string) bool {
+// ContainsKey contains key in map
+func (c *MultiMap) ContainsKey(key string) bool {
 	_, ok := c.Get(key)
 	return ok
 }

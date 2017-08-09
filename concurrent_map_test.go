@@ -9,7 +9,10 @@ func TestConcurrentMap(t *testing.T) {
 	concurrentMap := NewConcurrentMap()
 	concurrentMap.Set("name", "Raed Shomali")
 
-	ok := concurrentMap.Contains("name")
+	ok := concurrentMap.ContainsKey("name")
+	assert.True(t, ok)
+
+	ok = concurrentMap.ContainsEntry("name", "Raed Shomali")
 	assert.True(t, ok)
 
 	size := concurrentMap.Size()

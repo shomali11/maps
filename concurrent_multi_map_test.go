@@ -10,8 +10,17 @@ func TestConcurrentMultiMap(t *testing.T) {
 	concurrentMap.Set("names", []interface{}{"Raed Shomali"})
 	concurrentMap.Append("names", "Dwayne Johnson")
 
-	ok := concurrentMap.Contains("names")
+	ok := concurrentMap.ContainsKey("names")
 	assert.True(t, ok)
+
+	ok = concurrentMap.ContainsEntry("names", "Raed Shomali")
+	assert.True(t, ok)
+
+	ok = concurrentMap.ContainsEntry("names", "unknown")
+	assert.False(t, ok)
+
+	ok = concurrentMap.ContainsEntry("unknown", "unknown")
+	assert.False(t, ok)
 
 	size := concurrentMap.Size()
 	assert.Equal(t, size, 1)

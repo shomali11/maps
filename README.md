@@ -47,7 +47,7 @@ func main() {
 	concurrentMap := maps.NewConcurrentMap()
 	concurrentMap.Set("name", "Raed Shomali")
 
-	fmt.Println(concurrentMap.Contains("name")) // true
+	fmt.Println(concurrentMap.ContainsKey("name")) // true
 	fmt.Println(concurrentMap.Get("name"))      // "Raed Shomali" true
 	fmt.Println(concurrentMap.Size())           // 1
 	fmt.Println(concurrentMap.IsEmpty())        // false
@@ -55,7 +55,7 @@ func main() {
 
 	concurrentMap.Remove("name")
 
-	fmt.Println(concurrentMap.Contains("name")) // false
+	fmt.Println(concurrentMap.ContainsKey("name")) // false
 	fmt.Println(concurrentMap.Get("name"))      // <nil> false
 	fmt.Println(concurrentMap.Size())           // 0
 	fmt.Println(concurrentMap.IsEmpty())        // true
@@ -64,7 +64,7 @@ func main() {
 	concurrentMap.Set("name", "Raed Shomali")
 	concurrentMap.Clear()
 
-	fmt.Println(concurrentMap.Contains("name")) // false
+	fmt.Println(concurrentMap.ContainsKey("name")) // false
 	fmt.Println(concurrentMap.Get("name"))      // <nil> false
 	fmt.Println(concurrentMap.Size())           // 0
 	fmt.Println(concurrentMap.IsEmpty())        // true
@@ -88,7 +88,7 @@ func main() {
 	concurrentMap := maps.NewShardedConcurrentMap()
 	concurrentMap.Set("name", "Raed Shomali")
 
-	fmt.Println(concurrentMap.Contains("name")) // true
+	fmt.Println(concurrentMap.ContainsKey("name")) // true
 	fmt.Println(concurrentMap.Get("name"))      // "Raed Shomali" true
 	fmt.Println(concurrentMap.Size())           // 1
 	fmt.Println(concurrentMap.IsEmpty())        // false
@@ -96,7 +96,7 @@ func main() {
 
 	concurrentMap.Remove("name")
 
-	fmt.Println(concurrentMap.Contains("name")) // false
+	fmt.Println(concurrentMap.ContainsKey("name")) // false
 	fmt.Println(concurrentMap.Get("name"))      // <nil> false
 	fmt.Println(concurrentMap.Size())           // 0
 	fmt.Println(concurrentMap.IsEmpty())        // true
@@ -105,7 +105,7 @@ func main() {
 	concurrentMap.Set("name", "Raed Shomali")
 	concurrentMap.Clear()
 
-	fmt.Println(concurrentMap.Contains("name")) // false
+	fmt.Println(concurrentMap.ContainsKey("name")) // false
 	fmt.Println(concurrentMap.Get("name"))      // <nil> false
 	fmt.Println(concurrentMap.Size())           // 0
 	fmt.Println(concurrentMap.IsEmpty())        // true
@@ -129,7 +129,7 @@ func main() {
 	concurrentMap := maps.NewShardedConcurrentMap(maps.WithNumberOfShards(100))
 	concurrentMap.Set("name", "Raed Shomali")
 
-	fmt.Println(concurrentMap.Contains("name")) // true
+	fmt.Println(concurrentMap.ContainsKey("name")) // true
 	fmt.Println(concurrentMap.Get("name"))      // "Raed Shomali" true
 	fmt.Println(concurrentMap.Size())           // 1
 	fmt.Println(concurrentMap.IsEmpty())        // false
@@ -137,7 +137,7 @@ func main() {
 
 	concurrentMap.Remove("name")
 
-	fmt.Println(concurrentMap.Contains("name")) // false
+	fmt.Println(concurrentMap.ContainsKey("name")) // false
 	fmt.Println(concurrentMap.Get("name"))      // <nil> false
 	fmt.Println(concurrentMap.Size())           // 0
 	fmt.Println(concurrentMap.IsEmpty())        // true
@@ -146,7 +146,7 @@ func main() {
 	concurrentMap.Set("name", "Raed Shomali")
 	concurrentMap.Clear()
 
-	fmt.Println(concurrentMap.Contains("name")) // false
+	fmt.Println(concurrentMap.ContainsKey("name")) // false
 	fmt.Println(concurrentMap.Get("name"))      // <nil> false
 	fmt.Println(concurrentMap.Size())           // 0
 	fmt.Println(concurrentMap.IsEmpty())        // true
@@ -171,7 +171,7 @@ func main() {
 	concurrentMap.Set("names", []interface{}{"Raed Shomali"})
 	concurrentMap.Append("names", "Dwayne Johnson")
 
-	fmt.Println(concurrentMap.Contains("names")) // true
+	fmt.Println(concurrentMap.ContainsKey("names")) // true
 	fmt.Println(concurrentMap.Get("names"))      // ["Raed Shomali" "Dwayne Johnson"] true
 	fmt.Println(concurrentMap.Size())            // 1
 	fmt.Println(concurrentMap.IsEmpty())         // false
@@ -179,7 +179,7 @@ func main() {
 
 	concurrentMap.Remove("names")
 
-	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.ContainsKey("names")) // false
 	fmt.Println(concurrentMap.Get("names"))      // [] false
 	fmt.Println(concurrentMap.Size())            // 0
 	fmt.Println(concurrentMap.IsEmpty())         // true
@@ -188,7 +188,7 @@ func main() {
 	concurrentMap.Append("names", "Raed Shomali")
 	concurrentMap.Clear()
 
-	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.ContainsKey("names")) // false
 	fmt.Println(concurrentMap.Get("names"))      // [] false
 	fmt.Println(concurrentMap.Size())            // 0
 	fmt.Println(concurrentMap.IsEmpty())         // true
@@ -213,7 +213,7 @@ func main() {
 	concurrentMap.Set("names", []interface{}{"Raed Shomali"})
 	concurrentMap.Append("names", "Dwayne Johnson")
 
-	fmt.Println(concurrentMap.Contains("names")) // true
+	fmt.Println(concurrentMap.ContainsKey("names")) // true
 	fmt.Println(concurrentMap.Get("names"))      // ["Raed Shomali" "Dwayne Johnson"] true
 	fmt.Println(concurrentMap.Size())            // 1
 	fmt.Println(concurrentMap.IsEmpty())         // false
@@ -221,7 +221,7 @@ func main() {
 
 	concurrentMap.Remove("names")
 
-	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.ContainsKey("names")) // false
 	fmt.Println(concurrentMap.Get("names"))      // [] false
 	fmt.Println(concurrentMap.Size())            // 0
 	fmt.Println(concurrentMap.IsEmpty())         // true
@@ -230,7 +230,7 @@ func main() {
 	concurrentMap.Append("names", "Raed Shomali")
 	concurrentMap.Clear()
 
-	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.ContainsKey("names")) // false
 	fmt.Println(concurrentMap.Get("names"))      // [] false
 	fmt.Println(concurrentMap.Size())            // 0
 	fmt.Println(concurrentMap.IsEmpty())         // true
@@ -255,7 +255,7 @@ func main() {
 	concurrentMap.Set("names", []interface{}{"Raed Shomali"})
 	concurrentMap.Append("names", "Dwayne Johnson")
 
-	fmt.Println(concurrentMap.Contains("names")) // true
+	fmt.Println(concurrentMap.ContainsKey("names")) // true
 	fmt.Println(concurrentMap.Get("names"))      // ["Raed Shomali" "Dwayne Johnson"] true
 	fmt.Println(concurrentMap.Size())            // 1
 	fmt.Println(concurrentMap.IsEmpty())         // false
@@ -263,7 +263,7 @@ func main() {
 
 	concurrentMap.Remove("names")
 
-	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.ContainsKey("names")) // false
 	fmt.Println(concurrentMap.Get("names"))      // [] false
 	fmt.Println(concurrentMap.Size())            // 0
 	fmt.Println(concurrentMap.IsEmpty())         // true
@@ -272,7 +272,7 @@ func main() {
 	concurrentMap.Append("names", "Raed Shomali")
 	concurrentMap.Clear()
 
-	fmt.Println(concurrentMap.Contains("names")) // false
+	fmt.Println(concurrentMap.ContainsKey("names")) // false
 	fmt.Println(concurrentMap.Get("names"))      // [] false
 	fmt.Println(concurrentMap.Size())            // 0
 	fmt.Println(concurrentMap.IsEmpty())         // true

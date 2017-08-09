@@ -9,7 +9,8 @@ func main() {
 	concurrentMap := maps.NewShardedConcurrentMap(maps.WithNumberOfShards(100))
 	concurrentMap.Set("name", "Raed Shomali")
 
-	fmt.Println(concurrentMap.Contains("name"))
+	fmt.Println(concurrentMap.ContainsKey("name"))
+	fmt.Println(concurrentMap.ContainsEntry("name", "Raed Shomali"))
 	fmt.Println(concurrentMap.Get("name"))
 	fmt.Println(concurrentMap.Size())
 	fmt.Println(concurrentMap.IsEmpty())
@@ -17,7 +18,8 @@ func main() {
 
 	concurrentMap.Remove("name")
 
-	fmt.Println(concurrentMap.Contains("name"))
+	fmt.Println(concurrentMap.ContainsKey("name"))
+	fmt.Println(concurrentMap.ContainsEntry("name", "Raed Shomali"))
 	fmt.Println(concurrentMap.Get("name"))
 	fmt.Println(concurrentMap.Size())
 	fmt.Println(concurrentMap.IsEmpty())
@@ -26,7 +28,8 @@ func main() {
 	concurrentMap.Set("name", "Raed Shomali")
 	concurrentMap.Clear()
 
-	fmt.Println(concurrentMap.Contains("name"))
+	fmt.Println(concurrentMap.ContainsKey("name"))
+	fmt.Println(concurrentMap.ContainsEntry("name", "Raed Shomali"))
 	fmt.Println(concurrentMap.Get("name"))
 	fmt.Println(concurrentMap.Size())
 	fmt.Println(concurrentMap.IsEmpty())

@@ -10,7 +10,8 @@ func main() {
 	concurrentMap.Set("names", []interface{}{"Raed Shomali"})
 	concurrentMap.Append("names", "Dwayne Johnson")
 
-	fmt.Println(concurrentMap.Contains("names"))
+	fmt.Println(concurrentMap.ContainsKey("names"))
+	fmt.Println(concurrentMap.ContainsEntry("names", "Raed Shomali"))
 	fmt.Println(concurrentMap.Get("names"))
 	fmt.Println(concurrentMap.Size())
 	fmt.Println(concurrentMap.IsEmpty())
@@ -18,7 +19,8 @@ func main() {
 
 	concurrentMap.Remove("names")
 
-	fmt.Println(concurrentMap.Contains("names"))
+	fmt.Println(concurrentMap.ContainsKey("names"))
+	fmt.Println(concurrentMap.ContainsEntry("names", "Raed Shomali"))
 	fmt.Println(concurrentMap.Get("names"))
 	fmt.Println(concurrentMap.Size())
 	fmt.Println(concurrentMap.IsEmpty())
@@ -27,7 +29,8 @@ func main() {
 	concurrentMap.Append("names", "Raed Shomali")
 	concurrentMap.Clear()
 
-	fmt.Println(concurrentMap.Contains("names"))
+	fmt.Println(concurrentMap.ContainsKey("names"))
+	fmt.Println(concurrentMap.ContainsEntry("names", "Raed Shomali"))
 	fmt.Println(concurrentMap.Get("names"))
 	fmt.Println(concurrentMap.Size())
 	fmt.Println(concurrentMap.IsEmpty())
