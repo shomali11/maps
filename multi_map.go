@@ -44,6 +44,21 @@ func (c *MultiMap) ContainsKey(key string) bool {
 	return ok
 }
 
+// ContainsEntry concurrent contains entry in map
+func (c *MultiMap) ContainsEntry(key string, value interface{}) bool {
+	existingValues, ok := c.Get(key)
+	if !ok {
+		return false
+	}
+
+	for _, existingValue := range existingValues {
+		if existingValue == value {
+			return true
+		}
+	}
+	return false
+}
+
 // Size size of map
 func (c *MultiMap) Size() int {
 	return len(c.internalMap)

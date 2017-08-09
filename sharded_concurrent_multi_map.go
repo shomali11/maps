@@ -60,7 +60,7 @@ func (c *ShardedConcurrentMultiMap) ContainsKey(key string) bool {
 }
 
 // ContainsEntry concurrent contains entry in map
-func (c *ShardedConcurrentMultiMap) ContainsEntry(key string, value string) bool {
+func (c *ShardedConcurrentMultiMap) ContainsEntry(key string, value interface{}) bool {
 	shard := c.getShard(key)
 	concurrentMap := c.concurrentMaps[shard]
 	return concurrentMap.ContainsEntry(key, value)

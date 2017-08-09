@@ -3,6 +3,7 @@ package maps
 import (
 	"github.com/stretchr/testify/assert"
 	"testing"
+	"fmt"
 )
 
 func TestConcurrentMultiMap(t *testing.T) {

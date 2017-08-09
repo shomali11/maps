@@ -57,7 +57,7 @@ func (c *ConcurrentMultiMap) ContainsKey(key string) bool {
 }
 
 // ContainsEntry concurrent contains entry in map
-func (c *ConcurrentMultiMap) ContainsEntry(key string, value string) bool {
+func (c *ConcurrentMultiMap) ContainsEntry(key string, value interface{}) bool {
 	existingValues, ok := c.Get(key)
 	if !ok {
 		return false
