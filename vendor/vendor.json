@@ -87,6 +87,12 @@
 			"revisionTime": "2017-08-05T22:13:36Z"
 		},
 		{
+			"checksumSHA1": "K0dvq8+JyysF2mBqcrdus5gasvs=",
+			"path": "github.com/shomali11/util/xhashes",
+			"revision": "6aced18c6f939cc45505e79e5618c0e9c42fb509",
+			"revisionTime": "2017-10-26T23:08:12Z"
+		},
+		{
 			"checksumSHA1": "J+ppEq6nYMKxhB9+c+MD1x9UwSc=",
 			"path": "github.com/stretchr/testify/assert",
 			"revision": "05e8a0eda380579888eb53c394909df027f06991",
