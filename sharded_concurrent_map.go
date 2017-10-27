@@ -1,7 +1,7 @@
 package maps
 
 import (
-	"github.com/shomali11/util/hashes"
+	"github.com/shomali11/util/xhashes"
 )
 
 // NewShardedConcurrentMap creates a new sharded concurrent map
@@ -95,5 +95,5 @@ func (c *ShardedConcurrentMap) Clear() {
 }
 
 func (c *ShardedConcurrentMap) getShard(key string) uint32 {
-	return hashes.FNV32(key) % uint32(c.shards)
+	return xhashes.FNV32(key) % uint32(c.shards)
 }
