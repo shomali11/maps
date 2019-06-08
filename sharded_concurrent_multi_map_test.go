@@ -14,7 +14,7 @@ func TestShardedConcurrentMultiMap(t *testing.T) {
 	assert.True(t, ok)
 
 	ok = concurrentMap.ContainsEntry("name", "Raed Shomali")
-	assert.True(t, ok)
+	assert.False(t, ok)
 
 	size := concurrentMap.Size()
 	assert.Equal(t, size, 1)
