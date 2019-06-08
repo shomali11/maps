@@ -1,4 +1,4 @@
-# maps [![Go Report Card](https://goreportcard.com/badge/github.com/shomali11/maps)](https://goreportcard.com/report/github.com/shomali11/maps) [![GoDoc](https://godoc.org/github.com/shomali11/maps?status.svg)](https://godoc.org/github.com/shomali11/maps) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# maps [![Build Status](https://travis-ci.com/shomali11/maps.svg?branch=master)](https://travis-ci.com/shomali11/maps) [![Go Report Card](https://goreportcard.com/badge/github.com/shomali11/maps)](https://goreportcard.com/report/github.com/shomali11/maps) [![GoDoc](https://godoc.org/github.com/shomali11/maps?status.svg)](https://godoc.org/github.com/shomali11/maps) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A collection of various maps with concurrent versions that supports concurrent reads and writes.
 
